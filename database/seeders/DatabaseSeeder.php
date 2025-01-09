@@ -21,5 +21,13 @@ class DatabaseSeeder extends Seeder {
       'role' => 'admin',
       'last_login' => date('Y-m-d'),
     ]);
+
+    User::factory()->create([
+      'email' => 'user@mail.com',
+      'name' => 'user',
+      'password' => Hash::make('user123'),
+      'role' => 'user',
+      'last_login' => date('Y-m-d'),
+    ]);
   }
 }
