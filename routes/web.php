@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -29,4 +30,17 @@ Route::get('/users/{id}', [UserController::class, 'show'])
 Route::put('/users/{id}', [UserController::class, 'update'])
   ->middleware('auth');
 Route::delete('/users/{id}', [UserController::class, 'destroy'])
+  ->middleware('auth');
+
+Route::get('/employees', [EmployeeController::class, 'index'])
+  ->middleware('auth');
+Route::get('/employees/create', [EmployeeController::class, 'create'])
+  ->middleware('auth');
+Route::post('/employees', [EmployeeController::class, 'store'])
+  ->middleware('auth');
+Route::get('/employees/{id}', [EmployeeController::class, 'show'])
+  ->middleware('auth');
+Route::put('/employees/{id}', [EmployeeController::class, 'update'])
+  ->middleware('auth');
+Route::delete('/employees/{id}', [EmployeeController::class, 'destroy'])
   ->middleware('auth');

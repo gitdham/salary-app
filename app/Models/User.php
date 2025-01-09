@@ -14,6 +14,7 @@ class User extends Authenticatable {
   protected $primaryKey = 'email';
   public $incrementing = false;
   protected $keyType = 'string';
+  public $timestamps = false;
 
   /**
    * The attributes that are mass assignable.
@@ -47,11 +48,4 @@ class User extends Authenticatable {
       'password' => 'hashed',
     ];
   }
-
-  /**
-   * Indicates if the model should be timestamped.
-   *
-   * @var bool
-   */
-  public $timestamps = false;
 }
